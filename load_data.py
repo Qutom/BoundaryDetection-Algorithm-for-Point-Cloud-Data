@@ -4,13 +4,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+import Circle
 from sklearn.neighbors import NearestNeighbors
 from itertools import combinations
-
-#points = [x,y,z]
-def cal_circle(p1, p2, p3) :
-  #do something
-  return center, normal
   
 file_name = "points.txt"
 points = np.loadtxt(file_name)
@@ -34,12 +30,12 @@ pairs = list(combinations(p_neighbor[1:], 2))
 p1 = points[point_index]
 p2 = points[pairs[10][0]]
 p3 = points[pairs[10][1]]
-center, normal = cal_circle(p1, p2, p3)
-radius = p1 - center
+c = Circle(p1, p2, p3)
+
 
 #implement radius >= resolution check
 
 #plot
 plt.axes(projection='3d')
 plt.scatter((p1[0], p2[0], p3[0]), (p1[1], p2[1], p3[1]), (p1[2], p2[2], p3[2]))
-circle = 
+
