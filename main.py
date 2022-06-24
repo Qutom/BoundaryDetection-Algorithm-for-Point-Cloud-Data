@@ -20,6 +20,7 @@ boundary = np.loadtxt("ceil_boundary.txt")
 points = np.array(pc.points)
 high_z = float(np.max(points[:, 2]))
 min_z = float(np.min(points[:, 2]))
+
 props = remove_wall.remove_wall(points, boundary, method="cylinder", radius=0.07, min_z=min_z, high_z=high_z)
 
 o3d.visualization.draw_geometries([props])
