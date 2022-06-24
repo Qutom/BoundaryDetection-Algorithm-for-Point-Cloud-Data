@@ -79,4 +79,4 @@ def extract_plane(pointcloud, show_progress=False, voxel_size=0.1, nb_neighbors=
     if save_filename != None:
         np.savetxt(save_filename, points[:, :2])
 
-    return points[:, :2]
+    return points[:, :2], high_z, min_z
