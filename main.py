@@ -14,9 +14,9 @@ def display_outlier(points, ind):
 pc = o3d.io.read_point_cloud("cropped_1.ply")
 #o3d.visualization.draw_geometries([pc])
 
-#plane, high_z, min_z = plane_extractor.extract_plane(pc)
-#boundary = BPD.cal_boundary(plane, save_filename="ceil_boundary.txt")
-boundary = np.loadtxt("ceil_boundary.txt")
+plane, high_z, min_z = plane_extractor.extract_plane(pc)
+boundary = BPD.cal_boundary(plane, save_filename="ceil_boundary.txt")
+#boundary = np.loadtxt("ceil_boundary.txt")
 points = np.array(pc.points)
 high_z = float(np.max(points[:, 2]))
 min_z = float(np.min(points[:, 2]))
